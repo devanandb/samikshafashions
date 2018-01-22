@@ -7,6 +7,12 @@
 
 require('./bootstrap');
 
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+// loads the Icon plugin
+UIkit.use(Icons);
+
 window.Vue = require('vue');
 
 /**
@@ -16,6 +22,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('admin-categories', require('./components/AdminCategories.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -1,0 +1,21 @@
+header {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	z-index: 10;
+
+	.uk-navbar-nav > li > a {
+		text-transform: uppercase;
+	}
+}
+
+.header-placeholder {
+	height: 80px;
+	margin-bottom: 100px;
+	background-color: $gradcolor2;
+}
+
+footer {
+	padding: 120px 0px;
+	background: $gradcolor2;
+}

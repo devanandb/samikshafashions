@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'PagesController@index')->name('home');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/dashboard', 'DashboardController@index')->middleware('auth');
+Route::get('/admin/dashboard/categories', 'DashboardController@categories')->middleware('auth');
+
+Route::get('/api/categories', 'ApiController@categories');
+
+Route::get('/verify/token/{token}', 'Auth\VerificationController@verify')->name('auth.verify');
+Route::get('/verify/resend', 'Auth\VerificationController@resend')->name('auth.verify.resend');

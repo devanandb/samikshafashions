@@ -1,9 +1,16 @@
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import "~uikit/src/scss/variables.scss";
+@import "~uikit/src/scss/mixins.scss";
 
-// Variables
-@import "variables";
+/*Your custom mixin overwrites.*/
+@import "theme/general/_variables.scss";
+@import "theme/general/_overrides.scss";
+@import "theme/general/_mixins.scss";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+/*Import UIkit*/
+@import "~uikit/src/scss/uikit.scss";
+
+
+/* Layout files */
+@import "layouts/_header.scss";
+@import "layouts/_home.scss";

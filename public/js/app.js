@@ -804,7 +804,7 @@ module.exports = __webpack_require__(46);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_uikit__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_uikit__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_uikit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_uikit__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_uikit_dist_js_uikit_icons__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_uikit_dist_js_uikit_icons___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_uikit_dist_js_uikit_icons__);
@@ -824,7 +824,7 @@ __webpack_require__(15);
 __WEBPACK_IMPORTED_MODULE_0_uikit___default.a.use(__WEBPACK_IMPORTED_MODULE_1_uikit_dist_js_uikit_icons___default.a);
 
 window.Vue = __webpack_require__(11);
-
+window.UIkit = __webpack_require__(1);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -854,7 +854,7 @@ window._ = __webpack_require__(16);
 try {
   window.$ = window.jQuery = __webpack_require__(18);
 
-  __webpack_require__(2);
+  __webpack_require__(1);
 } catch (e) {}
 
 /**
@@ -17986,7 +17986,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(17)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(17)(module)))
 
 /***/ }),
 /* 17 */
@@ -29642,12 +29642,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            categories: []
+            categories: [],
+            category: {
+                name: ''
+            }
         };
     },
 
@@ -29661,7 +29673,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         editCurrent: function editCurrent(category) {
+            var modal = UIkit.modal("#showCategory");
             console.log(category.name);
+            this.$data.category = category;
+            UIkit.modal('#showCategory').show();
         }
     },
     mounted: function mounted() {
@@ -29728,7 +29743,39 @@ var render = function() {
           })
         )
       ]
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "showCategory", "uk-modal": "" } }, [
+      _c("div", { staticClass: "uk-modal-dialog uk-modal-body" }, [
+        _c("h2", { staticClass: "uk-modal-title" }, [_vm._v("Edit category")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.category.name,
+              expression: "category.name"
+            }
+          ],
+          attrs: { type: "text" },
+          domProps: { value: _vm.category.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.category, "name", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "uk-modal-close",
+          attrs: { type: "button" }
+        })
+      ])
+    ])
   ])
 }
 var staticRenderFns = [

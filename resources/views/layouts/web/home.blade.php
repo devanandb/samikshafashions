@@ -40,7 +40,9 @@
             </div>
         </div>
 
-        <div class="skew"></div>
+        <div class="skew">
+            <img src="/images/skew.png" alt="">
+        </div>
     </section>
 
 

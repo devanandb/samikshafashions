@@ -7,19 +7,23 @@
 	position: relative;
 
 	.skew {
-		&:before {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		img {
+			width: 100%;
+		}
+		/*&:before {
 			content: "";
 		    position: absolute;
 		    z-index: 0;
 		    width: 100%;
 		    height: 200px;
 		    bottom: -160px;
-		    /*min-height: 100%;
-		    padding-bottom: 300px;
-		    top: -200px;*/
 		    transform: skewY(-3deg);
 		    background-color: #fff;
-		}
+		}*/
 	}
 
 	.hero-box {

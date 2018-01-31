@@ -14,7 +14,7 @@ import Icons from 'uikit/dist/js/uikit-icons';
 UIkit.use(Icons);
 
 window.Vue = require('vue');
-
+window.UIkit = require('uikit');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

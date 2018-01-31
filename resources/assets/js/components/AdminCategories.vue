@@ -28,6 +28,15 @@
                     </tr>
             </tbody>
         </table>
+
+        <div id="showCategory" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Edit category</h2>
+                
+                <input type="text" v-model="category.name">
+                <button class="uk-modal-close" type="button"></button>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -36,7 +45,10 @@
     export default {
         data: function() {
             return {
-                categories: []
+                categories: [],
+                category: {
+                    name: ''
+                }
             }
         },
 
@@ -53,7 +65,10 @@
                 
             },
             editCurrent: function(category) {
+                let modal = UIkit.modal("#showCategory");
                 console.log(category.name);
+                this.$data.category = category;
+                UIkit.modal('#showCategory').show();
             }
         },
         mounted() {
